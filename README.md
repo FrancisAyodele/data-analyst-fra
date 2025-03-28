@@ -3,6 +3,15 @@ Overview of my Portfolio
 Dataset: Workforce Pay Rates and Gender for the City of Vancouver from 2019 to 2023
 # Portfolio Overview: To describes the processes of analyzing Workforce Pay Rates and Gender data from the City of Vancouver implemented through AWS Cloud Computing services
 
+My Overall DAP Design for Data Ingestion, Profiling, Cleaning, Cataloging and Summarization:
+
+# ![image](https://github.com/user-attachments/assets/04c0f0f5-2a69-4541-b98c-d455dca9cb54)
+
+My Data Analytic Platform Design for Data Analysis to Data Monitoring and Control
+
+# ![image](https://github.com/user-attachments/assets/4ecf5f39-ad85-41e6-8fa3-67492887d281)
+
+
 ### EXPLORATORY DATA ANALYSIS
 # Project Description: Performing EDA on Workforce Pay Rates and Gender Dataset.
 # Project Title: Reviewing Equity in Workforce Pay: An Exploratory Data Analysis
@@ -140,17 +149,30 @@ Changed data type
 Cleaned System data
 # ![image](https://github.com/user-attachments/assets/0725d99c-55e7-4399-ab9f-f16a02efa6dc)
 
-Insights:
-The Data Quality Issues I Identified during Data profiling Process:
-a)	During data profiling, I observed that, though there were 540 rows, the dataset are all in one column instead of being in different columns and they are separated by semi-colon (;) as shown in Figure 11 above, which means I need to split them into different columns before I can do cataloging and summarization. 
-Apart from the raw data being unstructured in 1 column, other noted data issues were identified:
-b)	Outlier values in the Minimum hourly rate, Maximum hourly rate, Female, Male and Total categories
-c)	Inconsistent Values in the”” “Exempt/Union” category, because more categories fall under these two as compared to very few counts for other categories.
-d)	Cross Field Issue (especially for the Female, Male and Total categories). This also occurs for the hourly rates because the minimum hourly rates ought to be less than or equal to the maximum hourly rates.
-e)	Redundant Values in the Data category, containing only aggregated data
-f)	Granularity Issue: This is obvious in the Female; Male and Total Categories. This issue also affects the Classification Category
-g)	Invalid Values: Because “Multiple Classification” in itself is not a group and “position title” being a column header is not a specific position
-h)	Outdated Values: Since the dataset is from 2019 to 2023, I am curious about why there was no record for 2024 or 2025, because so many changes could have occurred to our results.
+I created database on AWS Glue:
+# ![image](https://github.com/user-attachments/assets/7742a3a9-6012-4f96-8fc0-f67e1acce86a)
+
+I also performed ETL job and summarization using AWS Glue with pipeline shown below:
+# ![image](https://github.com/user-attachments/assets/f70d20c9-4501-49fa-a88a-47d612071961)
+
+
+Insights and iNTERPRETATION OF SUMMARIZED RESULTS
+1. The pay gap between male and female Genders staff at CUPE 15 'Admin Support Ia' 
+•	In 2019: The salary data from 2019 shows that male hourly rates averaged $32.00 while females received $29.00 as their average pay (Calculated from provided dataset using average of min/max). Pay Gap = 9.375%.
+•	In 2022: The analysis shows that male staff earn $38.82 per hour while female employees earn $26.5 (under the assumption that there is no pay difference in administrative positions) leading to a -46.49% pay gap in their favor (females receive higher pay).
+Interpretation: Rates paid to male employees were higher than female rates in 2019 yet female employees earned more than males during 2022. Further analysis needs to determine if the data composition changed because it likely affected this shift.
+2. Gender Representation in 'Exempt' vs 'CUPE 15' positions (Focus on Manager 1 role)
+•	2019 (Exempt Manager 1): 36 Females, 31 Males (54% Female)
+•	2022 (Exempt Manager 1): No information
+2023 (Exempt Manager 1): 40 Females, 26 Males (61% Female)
+•	In 2019: The operational support workforce of CUPE 15 shows 9 female workers out of 34 (26.5 %) while 25 male employees make up the remaining staff in 2019.
+No data can be found about the gender distribution among 2022 Operational Support AI personnel (CUPE 15 - closest available is Operational Support AI).
+The current workforce distribution reveals 5 female and 14 male staff at 'Operational Support IV' (CUPE 15) positions in 2023 (26.3% Female).
+Interpretation: The 'Exempt' 'Manager 1' positions demonstrate nearly equal gender participation through their increased female workforce numbers over the years. The 'CUPE 15' 'Operational Support' workforce consists predominantly of male staff members as their gender distribution shows no signs of shifting.
+3. 'Senior Exempt' Pay (Illustrative due to wide range):
+•	2019: Minimum $78.95, Maximum $96.72 (Only for Legal 3). The job distribution shows nearly equal participation from male and female colleagues who work together at the organization (13 females and 18 males). Average $87.83.
+•	2022: Male demographic dominates the "multiple job classifications" roles in 2022 since they comprise 17 workers against 9 female employees. The pay scale varies from $70.94 to $165.31. Average $118.12.
+•	In 2023: the General Manager 2 position spans between $99.6 at the entry level to $148.74 at the top level with most positions held by male employees (9 females and 3 males). Average $124.17.
 
 # Tools and Technologies:
 
@@ -158,16 +180,51 @@ h)	Outdated Values: Since the dataset is from 2019 to 2023, I am curious about w
      * AWS Glue Databrew
      * AWS Glue
      * AWS Crawler
-# Deliverables:
-# Timeline:
+# Deliverables:    
+     * The Gaps in Workforce Pay Rates are Complex
+     * How the Data is Represented Matters
+     * Senior Job Officers Command Higher Pay Rates
+     * Cleaned & Transformed Dataset in S3, partitioned by year or classification (if needed).
+     * Wrangling Report documenting recipes and transformations saved in the User and Systems folders in the Transformed and Curated S3 Storage Buckets
 
-### Data Quality Control
-# Project Description: 
-# Project Title:
-# Objective:
-# Background:
-# Scope:
+### DATA QUALITY CONTROL
+# Project Description: Data Quality Control (DQC) ensures the dataset remains accurate, complete, consistent, and reliable. This process is vital to maintaining trust and usability in the City of Vancouver’s workforce data, and this happens by setting monitoring and controlling plans in place that is automated.
+# Project Title: Monitoring and Controlling of Workforce Pay Rates and Gender Dataset DAP Design for the City of Vancouver
+# Objective: The main objective of data monitoring is to ensure that the system continuously monitors activities of the dataset while identifying irregularities in security by triggering warning signals for potential threats.
+# Background: After completion of Data Wrangling process and with multiple job classifications and an evolving workforce, the City of Vancouver’s pay-rate dataset can quickly become inconsistent or outdated. Routine checks are essential to validate completeness, uniqueness, and freshness.
+# Scope: The project will focus on the following key areas:
+•	Data Validation: Implementing validation rules and checks to ensure data integrity for the City of Vancouver.
+•	Monitoring and Reporting: Establishing ongoing monitoring processes and dashboards to track data quality metrics.
+•	Training and Awareness: Creating training programs for staff on data quality best practices.
 # Methodology:
+     1. Current State Assessment: 
+Recall that I had evaluated the raw, cleaned, and summarized datasets for recurring errors (e.g., large outlier values in the Maximum Hourly Rate for certain job classifications) after my thorough data profiling and cleaning operation with 23 changes made as shown in the data wrangling picture above, with cleaned datasets currenlty in transformed buckets and summarized datasets now in the curated S3 buckets.
+     2-	Data Profiling:
+I used data profiling tools to assess the quality of identified datasets, focusing on completeness, uniqueness, validity, consistency, and accuracy.
+I also documented findings to highlight areas requiring immediate attention.
+     3. Establish Data Quality Metrics:
+•	I created a dashboard with the name: workforce-prs-MCR-fra
+
+•	I initiated 3 monitoring actions:
+i.	Line graph in BucketSizeBytes of S3 raw bucket service used
+ii.	Line graph of ResourceUsage from AWS Glue service used
+iii.	Bar graph showing joint BucketSizeBytes analysis of the raw, transform and curated buckets
+•	I also Implemented Controlling Actions by installing Billing Alarm: The aim of this is to control user activities by setting up an alarm that keeps us posted whenever we are starting to exceed certain threshold.
+Image showing how I set up Monitoring and Controlling Dashboard on AWS CloudWatch
+# ![image](https://github.com/user-attachments/assets/29b43079-0c6e-4864-b8bc-f0bbbb77334c)
+
+4. I Established Data Quality Metrics
+* Completeness: e.g., 95% of rows must have valid numeric hourly pay.
+* Uniqueness: e.g., minimal duplication in classification-year entries.
+* Validity: e.g., no negative pay rates.
+
+5-	Validation Rules and Procedures:
+* Automated transformations to remove or correct invalid data.
+* I did Partitioning in S3 into “Passed” and “Failed” folders based on thresholds.
+Image showing Event History for the COV Payrates and Sex Dataset from AWS CloudTrail Solution
+# 
+
+
 # Deliverables:
 # Timeline:
 
