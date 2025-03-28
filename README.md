@@ -109,13 +109,55 @@ I made a brief Diagnostic Report explaining the top factors that influence pay g
 This data was collected across a 5-year period (from 2019 to 2023).
 
 ### Data Wrangling
-# Project Description: I used AWS Glue Databrew to Profile (identify data quality issues in the dataset) and clean the data, while I used AWS Glue to perform data cataloging and data summarization using Extract, Transform and Load (ETL) Operation.
-# Project Title: 
-# Objective:
-# Background:
-# Dataset:
-# Methodology:
+# Project Description: I used AWS Glue Databrew to Profile (identify data quality issues in the dataset) and clean the data, while I used AWS Glue to perform data cataloging and data summarization using Extract, Transform and Load (ETL) Operation. Generally, this shows the process of cleaning, transforming, and consolidating data to ensure it is ready for downstream analysis and reporting.
+# Project Title: Profiling, Cleaning and SUmmarizing Workforce pay rate and gender dataset for the City of Vancouver Workforce Dataset for Analysis
+# Objective: To identify all data quality issues, rectify all data quality issues—missing columns, incorrect data types, inconsistent classification labels—and produce a summarized and clean, ready-to-analyze dataset that can be seamlessly passed into analytics tools.
+# Background: Data dowbnloaded has data quality issues identified
+# Dataset: Workforce pay rates and gender dataset earlier identified
+# Methodology: 
+1. Data Profiling: Profiling my dataset is the process of assessing, analyzing and understanding the issues, content, structure and quality of my dataset to ensure it is good enough for cleaning. That is, in this phase, I will critically review my dataset to understand the present quality and understand, which means it is a data preparation tool that helps me to gain more insights into my data quality and readiness to be cleaned.
+   Data was Ingested from Transform bucket on S3 storage
+# ![image](https://github.com/user-attachments/assets/a5bedd01-772a-48c3-aa7c-4004d7ad1957)
+
+Image of Profiled Dataset on AWS Glue Databrew
+# ![image](https://github.com/user-attachments/assets/20e1c373-99e8-42eb-9335-b13e68bc1336)
+
+Result of profiled dataset
+# ![image](https://github.com/user-attachments/assets/92840dfe-59c3-4003-bc84-695c4d058fc5)
+
+* Data Cleaning:
+Congested Workforce data:
+![image](https://github.com/user-attachments/assets/c3ed5e52-420c-44f1-82f4-869f74356365)
+
+23 cleaning operations performed
+# ![image](https://github.com/user-attachments/assets/868497c5-3ba9-44bb-99d8-9b667d766732)
+
+Changed data type
+# ![image](https://github.com/user-attachments/assets/da7c0475-51cf-483a-b4b1-54dc086279e6)
+ Cleaned User data
+# ![image](https://github.com/user-attachments/assets/8c95d446-e8e0-45e3-a8b9-4da663fcae04)
+
+Cleaned System data
+# ![image](https://github.com/user-attachments/assets/0725d99c-55e7-4399-ab9f-f16a02efa6dc)
+
+Insights:
+The Data Quality Issues I Identified during Data profiling Process:
+a)	During data profiling, I observed that, though there were 540 rows, the dataset are all in one column instead of being in different columns and they are separated by semi-colon (;) as shown in Figure 11 above, which means I need to split them into different columns before I can do cataloging and summarization. 
+Apart from the raw data being unstructured in 1 column, other noted data issues were identified:
+b)	Outlier values in the Minimum hourly rate, Maximum hourly rate, Female, Male and Total categories
+c)	Inconsistent Values in the”” “Exempt/Union” category, because more categories fall under these two as compared to very few counts for other categories.
+d)	Cross Field Issue (especially for the Female, Male and Total categories). This also occurs for the hourly rates because the minimum hourly rates ought to be less than or equal to the maximum hourly rates.
+e)	Redundant Values in the Data category, containing only aggregated data
+f)	Granularity Issue: This is obvious in the Female; Male and Total Categories. This issue also affects the Classification Category
+g)	Invalid Values: Because “Multiple Classification” in itself is not a group and “position title” being a column header is not a specific position
+h)	Outdated Values: Since the dataset is from 2019 to 2023, I am curious about why there was no record for 2024 or 2025, because so many changes could have occurred to our results.
+
 # Tools and Technologies:
+
+     * AWS S3 Transform Bucket
+     * AWS Glue Databrew
+     * AWS Glue
+     * AWS Crawler
 # Deliverables:
 # Timeline:
 
