@@ -98,15 +98,19 @@ B. The rise in workforce in 2020 witnessed a decrease in 2021 from 3,248 to 3,15
 Business Question: Which of the Job Classifications record the highest pay variations/differences?
 2. visual Representation of my Descriptive Business Questions 
 # ![image](https://github.com/user-attachments/assets/7a407cc1-e4cb-4a00-acdc-b3b36a01ce6b)
-
+3. Insights and Findings
+Clearly, there is a variation in pay rates with the highest (over $139/hour) being multiple classifications while legal 3 earns only $26.44 per hour. However, we are not sure if the large difference is due to experience level or scales of job tasks assigned.
 # Tools and Technologies:
+     * Amazon Athena for SQL-based query runs
+     * AWS Glue: to populate data tables into the AWS Athena for further processing
 # Deliverables:
-# Timeline:
-
+I made a brief Diagnostic Report explaining the top factors that influence pay gaps from project 2
+# Timeline: 
+This data was collected across a 5-year period (from 2019 to 2023).
 
 ### Data Wrangling
-# Project Description: 
-# Project Title:
+# Project Description: I used AWS Glue Databrew to Profile (identify data quality issues in the dataset) and clean the data, while I used AWS Glue to perform data cataloging and data summarization using Extract, Transform and Load (ETL) Operation.
+# Project Title: 
 # Objective:
 # Background:
 # Dataset:
