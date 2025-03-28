@@ -251,6 +251,6 @@ Key phases completed:
  * Increase Analytical Capabilities to link with other platforms
 
 # Conclusion
-The workforce pay rates and sex clearly has undergone processes from data ingestion to monitoring and control, and various quality issues have been identified and fixed. If all the recommended actions and properly implemented by the City of Vancouver, not only will the quality of data received improve greatly, but also, there would be outstanding closure in pay gaps across all job classificaions within the next 5 years.
+The workforce pay rates and sex clearly has undergone processes from data ingestion to monitoring and control, and various quality issues have been identified and fixed. If all the recommended actions and properly implemented by the City of Vancouver, not only will the quality of data received improve greatly, but also, there would be outstanding closure in pay gaps across all job classificaions before end of Q4 2030.
 
 
