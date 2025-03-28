@@ -213,6 +213,12 @@ iii.	Bar graph showing joint BucketSizeBytes analysis of the raw, transform and 
 Image showing how I set up Monitoring and Controlling Dashboard on AWS CloudWatch
 # ![image](https://github.com/user-attachments/assets/29b43079-0c6e-4864-b8bc-f0bbbb77334c)
 
+Results of Passed Quality Check
+# ![image](https://github.com/user-attachments/assets/8ab3bd74-4bba-4af9-9c93-567a4151a195)
+
+Results of Failed Quality Checks
+# ![image](https://github.com/user-attachments/assets/9ae09b15-1683-4f76-842c-f339ed5b516a)
+
 4. I Established Data Quality Metrics
 * Completeness: e.g., 95% of rows must have valid numeric hourly pay.
 * Uniqueness: e.g., minimal duplication in classification-year entries.
@@ -222,10 +228,29 @@ Image showing how I set up Monitoring and Controlling Dashboard on AWS CloudWatc
 * Automated transformations to remove or correct invalid data.
 * I did Partitioning in S3 into “Passed” and “Failed” folders based on thresholds.
 Image showing Event History for the COV Payrates and Sex Dataset from AWS CloudTrail Solution
-# 
+# ![image](https://github.com/user-attachments/assets/e798ec0e-4002-4d77-a7bc-ac71c11c44b0)
 
+Image showing an Overview of User Activity on AWS CloudTrail Service 
+# ![image](https://github.com/user-attachments/assets/a0f68152-7957-4237-a060-8430704daa0a)
 
-# Deliverables:
-# Timeline:
+# Deliverables: Here are the key phases completed:
+Key phases completed:
+1.	Data Analysis: achieved business intelligence at five stages through the utilization of S3, AWS Glue and Athena to perform descriptive, diagnostic, predictive, prescriptive and causal analysis. The business got answers to actual business questions about workforce changes and gender pay differences and salary projections by running SQL queries on the database.
+
+2.	Data Security: Pay and gender data protection was achieved through the implementation of AWS KMS, IAM roles, bucket replication and encryption policies.
+
+3.	Data Governance: The AWS S3 quality-check pipelines and AWS Glue Data Quality rules performed Data Governance functions through standard assessments of data completeness and uniqueness and freshness.
+
+4.	Data Monitoring: employed CloudWatch together with SNS and CloudTrail to create performance dashboards, execution time monitoring functions, billing alerts, and security operation control through activity tracking.
+
+# Recommendations for the City of Vancouver:
+ * Implement the Current DAP Solution Design
+ * Improve Data Freshness and Diversity
+ * Strengthen Access and Encryption Policies
+ * Monitoring & Alerts should be made Operational
+ * Increase Analytical Capabilities to link with other platforms
+
+# Conclusion
+The workforce pay rates and sex clearly has undergone processes from data ingestion to monitoring and control, and various quality issues have been identified and fixed. If all the recommended actions and properly implemented by the City of Vancouver, not only will the quality of data received improve greatly, but also, there would be outstanding closure in pay gaps across all job classificaions within the next 5 years.
 
 
