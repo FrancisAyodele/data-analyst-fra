@@ -90,10 +90,15 @@ B. The rise in workforce in 2020 witnessed a decrease in 2021 from 3,248 to 3,15
 ### DIAGNOSTIC ANALYSIS
 # Project Description: This answered the question “Why did it happen?” by looking into relationships between variables—such as classification, gender representation, and year-to-year pay changes—and identifying possible causes for observed trends.
 # Project Title: Investigating Differences in Pay Distribution in the City of Vancouver
-# Objective: 
-# Background:
-# Dataset:
-# Methodology:
+# Objective: This analysis enabled me to find patterns of change across a single column from our data of workforce-pay-rates-and-gender from the City of Vancouver from 2019 to 2023. This will be implemented by answering more business questions that will be solved using Athena and SQL.
+# Background: A notable finding during EDA and Descriptive Analysis was that the large gap existed in the maximum hourly rates in senior-level or exempt positions. Also, the workforce composition in certain operational or support roles was found to be largely dominated by male gender.
+# Dataset: I used the previous workforce-pay-rates-and-gender dataset already uploaded from the AWS Glue Databrew to AWS Athena for querying using SQL
+# Methodology: 
+1. I asked 1 diagbistic business question:
+Business Question: Which of the Job Classifications record the highest pay variations/differences?
+2. visual Representation of my Descriptive Business Questions 
+# ![image](https://github.com/user-attachments/assets/7a407cc1-e4cb-4a00-acdc-b3b36a01ce6b)
+
 # Tools and Technologies:
 # Deliverables:
 # Timeline:
