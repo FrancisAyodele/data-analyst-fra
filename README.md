@@ -21,6 +21,9 @@ Dataset: Workforce Pay Rates and Gender for the City of Vancouver from 2019 to 2
 # ![image](https://github.com/user-attachments/assets/30e00950-07c7-4ac4-9c45-a4259be68840)
 Source: Francis’ Project – City of Vancouver
 
+Then I saved the downloaded document in AWS Raw S3  Bucket as shown in the image below:
+# ![image](https://github.com/user-attachments/assets/02db89fb-580a-48d7-ba0e-583f9191cbdb)
+
 2. Initial ProfilinG
 Used Excel and to generate statistical visualizations on data completeness, duplicates, min/max values, and potential outliers. 
 # ![image](https://github.com/user-attachments/assets/ce26eaf7-8490-45e7-97da-040900376b77)
@@ -45,21 +48,49 @@ Used Excel and to generate statistical visualizations on data completeness, dupl
      * Microsoft Excel CSV file for exploratory charts
      * City of Vancouver Website
 
-6-	Conclusion:
+### DESCRIPTIVE ANALYSIS
+# Project Description: Descriptive Analysis aims to answer the question “What happened?” by summarizing historical pay data and highlighting trends or patterns in purchasing or workforce contexts. Here, we apply descriptive analysis to further quantify and categorize the City of Vancouver workforce pay data, examining total staff counts, distribution by classification, and year-over-year changes.
+# Project Title: Descriptive Analytics of Workforce Pay Structures at the City of Vancouver
+# Objective: My objective here was to extract patterns (such as trends, seasonality, frequency of occurrence, correlations, clusters, anomalies etc.) and with this, I would need AWS Athena service to populate queries and tables using the SQL. 
+# Dataset: I used the same dataset from the City of Vancouver, focusing on the aggregated staff counts (female, male, total), pay rate columns, and the job classifications within either exempt or union categories.
+# Methodology: 
+     1. Data Ingestion and Cleaning
+          I built upon the cleaned data from the EDA phase, used the refined columns (Year, ExemptOrUnion, Classification, Min/Max Hourly Rate, Female, Male, Total) for descriptive calculations.
+     2. Statistical Summaries
+          I did descriptive summary on excel
+# ![image](https://github.com/user-attachments/assets/67f2584a-b1e1-4be0-ad6b-311c2c869a67)
+Distribution of hourly wages in minimum and maximum pay
+# ![image](https://github.com/user-attachments/assets/ff75997b-8ef7-447a-ae27-a5b0dc48ccd3)
 
-### Descriptive Analysis
-# Project Description: 
-# Project Title:
-# Objective:
-# Dataset:
-# Methodology:
+I prepared the lcoation of my queried dataset in the curated S3 bucket
+# ![image](https://github.com/user-attachments/assets/12fd1a4b-d711-4c31-b6fb-5ec4bd59556c)
+      3. visual Representation of my Descriptive Business Questions (these were done on AWS Athena for SQL codes)
+A. What is the average hourly rate of pay (Minimum and Maximum) per year?
+# ![image](https://github.com/user-attachments/assets/1c525471-675d-4e10-85f3-99ba75ba0900)
+
+B. What is the number of Staff members per year?
+# ![image](https://github.com/user-attachments/assets/47dd80da-79aa-47cf-8563-bb80c0ee8149)
+
+      4. Insights and Findings
+A. The SQL query to business question 1 shows that the overall change in pay rates over a 5-year period, with the least average minimum hourly rate being over $35 in 2019 and the highest average hourly rate occurring in 2023, showing an upward trend.
+B. The rise in workforce in 2020 witnessed a decrease in 2021 from 3,248 to 3,157. In general, 2023 workforce count (3,301) has been the highest in the last 5 years.
+
+     5. Continued efforts need to be combined to ensure that wage gap is bridged across genders and different job classifications.
+
 # Tools and Technologies:
-# Deliverables:
+     * SQL Query Editor
+     * AWS Athena
+     * AWS Glue Databrew
+     * AWS Curated S3 Storage bucket
 
-### Diagnostic Analysis
-# Project Description: 
-# Project Title:
-# Objective:
+# Deliverables: I was able to show:
+     * Detailed Descriptive Report: Summarizing distribution metrics and year-over-year trends
+     * Visual Representation of SQL Queries that answered my business questions
+
+### DIAGNOSTIC ANALYSIS
+# Project Description: This answered the question “Why did it happen?” by looking into relationships between variables—such as classification, gender representation, and year-to-year pay changes—and identifying possible causes for observed trends.
+# Project Title: Investigating Differences in Pay Distribution in the City of Vancouver
+# Objective: 
 # Background:
 # Dataset:
 # Methodology:
