@@ -18,27 +18,26 @@ Dataset: Workforce Pay Rates and Gender for the City of Vancouver from 2019 to 2
      * Ingested the CSV dataset into Amazon S3 (Raw bucket).
      * Ensured the CSV file was accessible for further profiling and cleaning (see Figure 1 below).
 **Figure 1**: Downloaded Workforce Dataset (CSV) in S3
-
+# ![image](https://github.com/user-attachments/assets/30e00950-07c7-4ac4-9c45-a4259be68840)
 Source: Francis’ Project – City of Vancouver
 
 2. Initial ProfilinG
-Used AWS Glue DataBrew to generate statistics on data completeness, duplicates, min/max values, and potential outliers. This step informed the potential corrections needed during the cleaning phase.
-**Figure 2**: Initial Data Profiling in AWS Glue DataBrew
-Source: Francis’ Project – City of Vancouver
+Used Excel and to generate statistical visualizations on data completeness, duplicates, min/max values, and potential outliers. 
+# ![image](https://github.com/user-attachments/assets/ce26eaf7-8490-45e7-97da-040900376b77)
 
 3. Descriptive Summaries
      * Calculated summary statistics (mean, median, mode) for the numerical columns (Minimum and Maximum Hourly Rate, Female, Male, Total).
      * Counted the frequency distribution of classification types and union/exempt categories.
 4. Data Visualization
 * Created basic charts (box plots, bar charts) to reveal distributions of hourly rates and how they differ across classification types and years.
-
-**Figure 3:** Box Plot of Maximum Hourly Rate by Job Classification
-Source: Francis’ Project – City of Vancouver
+# ![image](https://github.com/user-attachments/assets/95683203-070c-4fb9-9d9a-f775baf92814)
+# ![image](https://github.com/user-attachments/assets/3dff2b98-37e5-4451-99d1-c69eaf18c667)
 
 5-	Insights and Findings:
      * Summarize the findings based on data visualizations and statistical analyses
      * Highlight of notable trends and patterns (e.g., women and children had higher survival rates, first-class passengers had a significant survival advantage).
-
+# ![image](https://github.com/user-attachments/assets/af0c9ee5-42db-44c6-8759-1f7ceaadd6d2)
+# ![image](https://github.com/user-attachments/assets/0483e0de-0680-4d2e-ba7d-f3ee5e3cb467)
 
 # Tools and Technologies:
      * AWS S3 for data ingestion
